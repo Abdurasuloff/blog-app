@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+
+{% block title %}
+{{blog.sarlavha}}ni tahrirlash
+{% endblock title %}
+
+{% block content %}
+
+<form  class="form" method="post" enctype="multipart/form-data">
+
+    <a class="back  yellow" href="{% url 'blog_detail' blog.id %}">Qaytish</a>
+    
+    <div class="main">
+        <h1>{{blog.sarlavha}}ni tahrirlash</h1>
+        {% csrf_token %}
+        {{form|crispy}}
+    </div>
+
+    <button class="button green" type="submit" >Saqlash</button>
+</form>
+
+
+{% endblock content %}

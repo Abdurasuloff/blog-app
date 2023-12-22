@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+
+{% block title %}
+    Blog yaratish
+{% endblock title %}
+
+{% block content %}
+
+<form  class="form" method="post" enctype="multipart/form-data">
+
+    <a class="back  yellow" href="{% url 'index' %}">Qaytish</a>
+    
+    <div class="main">
+        <h1>Blog yaratish</h1>
+        {% csrf_token %}
+        {{form|crispy}}
+    </div>
+
+    <button class="button green" type="submit" >Tasdiqlash</button>
+</form>
+
+
+{% endblock content %}

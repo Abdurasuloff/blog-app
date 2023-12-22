@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}
+    {{blog.sarlavha}} - O'chirish
+{% endblock %}
+
+{% block content %}  
+
+<form class="form"  method="post">
+    
+    <a class="back green " href="{% url 'blog_detail' blog.id %}">Yo'q, qaytish</a>
+    
+    <div class="main">
+        <h1>"{{blog.sarlavha}}"ni o'chirish</h1>
+        {% csrf_token %}
+        <p>Siz haqiqatdan ham postni o'chirib yubormoqchimisiz?</p>
+    </div>
+   
+    <button class="button red" type="submit" >Ha, O'chiraman</button>
+    
+    
+</form>
+{% endblock %}

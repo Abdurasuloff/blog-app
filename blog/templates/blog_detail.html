@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}
+    {{blog.sarlavha}}
+{% endblock title %}
+
+
+{% block content %}
+<h1>{{blog.sarlavha}}</h1>
+<small> Avtor: {{blog.avtor.username}} | Sanasi: {{blog.vaqt}} 
+    | <a href="{% url 'index' %}">Qaytish</a> 
+    | <a href="{% url 'blog_tahrirlash' blog.id %}">Tahrirlash</a>
+    | <a href="{% url 'blog_ochirish' blog.id %}">O'chirish</a>
+</small> <br>
+<br>
+{% if blog.rasm %}
+    <img width="100%"  src="{{blog.rasm.url}}" alt="Blog rasm">
+{% endif %}
+
+<p>{{blog.tanasi}}</p>
+{% endblock content %}
+

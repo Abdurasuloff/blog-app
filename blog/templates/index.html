@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Bosh Sahifa
+{% endblock title %}
+
+
+{% block content %}
+<h1 >Oxirgi maqolalar</h1>
+       
+<div class="blogs" >
+    {% for blog in blogs %}
+        <a class="blog" href="{% url 'blog_detail' blog.id %}">
+            {% if blog.rasm %}
+                <img class="blog__img" src="{{blog.rasm.url}}" alt="">
+            {% else %}
+                <img class="blog__img" src="https://img.freepik.com/premium-vector/default-image-icon-vector-missing-picture-page-website-design-mobile-app-no-photo-available_87543-11093.jpg?w=996" alt="">
+            {% endif %}
+            <p class="title" >{{blog.sarlavha}}</p>
+            <p><small>{{blog.vaqt}}</small></p>
+        </a>
+    {% endfor %}
+</div>
+{% endblock content %}
