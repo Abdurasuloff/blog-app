@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+
+{% block title %}
+    Yangi parolni kiriting.
+{% endblock title %}
+
+
+{% block content %}
+<div class="row">
+    <div class="col-3"></div>
+    <div class="col-6">
+        <div class="card mt-5">
+            <div class="card-header">
+                <h3>Yangi parolni kiriting.</h3>
+            </div>
+            <div class="card-body">
+                <form  method="post">
+                    {% csrf_token %}
+                    {{form|crispy}}
+                    <button class="btn btn-primary" >Yaratish</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
+

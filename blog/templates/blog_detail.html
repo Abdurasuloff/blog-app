@@ -9,8 +9,10 @@
 <h1>{{blog.sarlavha}}</h1>
 <small> Avtor: {{blog.avtor.username}} | Sanasi: {{blog.vaqt}} 
     | <a href="{% url 'index' %}">Qaytish</a> 
-    | <a href="{% url 'blog_tahrirlash' blog.id %}">Tahrirlash</a>
-    | <a href="{% url 'blog_ochirish' blog.id %}">O'chirish</a>
+    {% if request.user == blog.avtor %}
+        |    <a href="{% url 'blog_tahrirlash' blog.id %}">Tahrirlash</a>
+        |   <a href="{% url 'blog_ochirish' blog.id %}">O'chirish</a>
+    {% endif %}
 </small> <br>
 <br>
 {% if blog.rasm %}

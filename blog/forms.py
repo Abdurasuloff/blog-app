@@ -8,4 +8,3 @@ class BlogForm(ModelForm):
         fields = ['sarlavha', 'tanasi', 'vaqt', 'rasm']
         
         
-        

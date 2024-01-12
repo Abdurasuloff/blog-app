@@ -6,7 +6,7 @@ from datetime import datetime
 
 
 class Blog(models.Model):
-    # avtor = models.ForeignKey(User, on_delete=models.CASCADE)
+    avtor = models.ForeignKey(User, on_delete=models.CASCADE)
     sarlavha = models.CharField(max_length=250, help_text="Bu yerga maqola sarlavhasini kiritasiz.")
     tanasi = models.TextField(help_text="Maqolaning matni.")
     vaqt = models.DateTimeField(help_text="Maqolaning vaqti", default=datetime.now())

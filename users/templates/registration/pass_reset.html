@@ -1,0 +1,23 @@
+{% extends "registration/user_base.html" %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+    Parolni qayta tiklash
+{% endblock title %}
+
+
+{% block content %}
+<div class="card mt-5">
+  <div class="card-header">
+      <h3>Parolni qayta tiklash</h3>
+  </div>
+  <div class="card-body">
+      <form  method="post">
+           <p>Parolni qayta tiklash uchun email manzilingizni jo'nating.</p>
+          {% csrf_token %}
+          {{form|crispy}}
+          <button class="btn btn-primary" >Tasdiqlash</button>
+      </form>
+  </div>
+</div>
+{% endblock content %}

@@ -1,0 +1,23 @@
+{% extends "registration/user_base.html" %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+    Hisob yaratish
+{% endblock title %}
+
+
+{% block content %}
+<div class="card mt-5">
+  <div class="card-header">
+      <h3>Hisob yaratish</h3>
+  </div>
+  <div class="card-body">
+      <form  method="post">
+          {% csrf_token %}
+          {{form|crispy}}
+          <button class="btn btn-primary" >Yaratish</button>
+          Hisobingiz bormi? <a href="{% url 'login' %}">Tizimga kirish</a>
+      </form>
+  </div>
+</div>
+{% endblock content %}

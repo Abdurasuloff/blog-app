@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blog',
+    'users',
     'crispy_bootstrap5',
     'crispy_forms',
 ]
@@ -119,6 +120,18 @@ USE_I18N = True
 USE_TZ = True
 
 
+
+# Email settings
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+
+# EMAIL_HOST = 'smtp.gmail.com'
+# EMAIL_HOST_PORT = 25
+# EMAIL_USE_TLS = True
+# EMAIL_HOST_USER = 'your_gmail_account@gmail.com'
+# EMAIL_HOST_PASSWORD = 'your_gmail_password'
+
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
@@ -136,8 +149,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = 'index'
 
-
 LOGOUT_URL = 'logout'
-LOGOUT_REDIRECT_URL = 'index'
+LOGOUT_REDIRECT_URL = 'login'
 
-OWNER = 'Akbarjon'
